@@ -1,0 +1,152 @@
+﻿@model ShopSystem.Controllers.ProductsWithImage;
+@{
+    ViewData["Title"] = "Search";
+    var searchItems = ViewBag.searchItems;
+}
+
+<div class="main">
+    <div id="flex-container">
+        @{
+            foreach (var item in searchItems)
+            {
+                <div style="background-image:url(../images/@item.ImageFileName); background-size:cover; background-repeat: no-repeat; background-position: 50% 50%;">
+                    <input class="productName" style="border: none; background-color: transparent; text-align: center;" value="@item.Name" disabled />
+                    Price: <input class="productPrice" style="border: none; background-color: transparent; text-align: center;" value="@item.Price" BDT disabled />
+                    <input class="productUom" style="border: none; background-color: transparent; text-align: center;" value="@item.UOM" disabled />
+                    Quantity: <input class="productQuantity" style="text-align: center;" type="text" id="productQuantity+@item.ProductId" />
+                    <button>View product details</button>
+                    <button id="addToCartBtn" data-name="@item.Name" data-price="@item.Price" data-uom="@item.UOM" data-id="@item.ProductId">Add to cart</button>
+                </div>
+
+            }
+        }
+
+    </div>
+</div>
+<div id="popup_bg">
+    <div id="popup_main_div">
+        <div id="popup_close_div">
+            <p>X</p>
+        </div>
+        <div id="main_data">
+
+        </div>
+        <div id="popup_footer">
+
+        </div>
+    </div>
+</div>
+
+@section scripts{ 
+    <script>
+        $(document).ready(function{
+            $(document).on('click', '#addToCartBtn', function () {
+                var productId = $(this).data('id');
+                var productName = $(this).data('name');
+                var productPrice = $(this).data('price');
+                var productUom = $(this).data('uom');
+                var quantity = $('#productQuantity' + productId).val();
+                var totalPrice = productPrice * quantity;
+                if (quantity <= 0) {
+                    alert("must define Quantity..")
+
+                } else {
+                    var item = {
+                        id: productId,
+                        name: productName,
+                        price: productPrice,
+                        uom: productUom,
+                        quantity: quantity,
+                        totalPrice: totalPrice
+                    };
+
+                    var item_string = JSON.stringify(item);
+
+                    if (localStorage.getItem(item.id) != null) {
+                        localStorage.removeItem(item.id);
+                        localStorage.setItem(item.id, item_string);
+
+                    } else {
+                        localStorage.setItem(item.id, item_string);
+
+                    }
+
+                }
+
+            });
+
+
+            $(document).ready(function () {
+
+                $(document).on('click', '.viewCartBtn', function () {
+                    $('#popup_bg').css("display", "block");
+                    $('#popup_close_div').on('click', function () {
+                        $('#popup_bg').css("display", "none");
+                    });
+                    var arrayItems = new Array();
+                    for (var i = 0; i < localStorage.length; i++) {
+                        arrayItems[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                    }
+                    var x = " ";
+                    var s = " ";
+                    var totalPrice = 0;
+                    $('#main_data').html(" ");
+                    s += '<ul>';
+                    for (var i = 0; i < arrayItems.length; i++) {
+                        s += '<button class="delete_item_to_cart" data-itemId="' + arrayItems[i].id + '">Delete Item From Cart</button>';
+                        s += '<li><div><p>' + arrayItems[i].name + '</br>Total Price : ' + arrayItems[i].totalPrice + ' | Quantity : ' + arrayItems[i].quantity + '</p></div>';
+                        s += '</li>'
+                        totalPrice += parseInt(arrayItems[i].totalPrice);
+                    }
+
+                    s += '</ul>';
+                    $('#main_data').append(s);
+
+                    $('#popup_footer').html(" ");
+                    x += 'Total Price = ' + totalPrice;
+                    $('#popup_footer').append(x);
+                });
+
+                $(document).on('click', ".delete_item_to_cart", function () {
+                    var delete_Id = $(this).data();
+                    var id = delete_Id.itemid;
+
+                    localStorage.removeItem(id);
+
+                    var arrayItems = new Array();
+                    for (var i = 0; i < localStorage.length; i++) {
+                        arrayItems[i] = JSON.parse(localStorage.getItem(localStorage.key(i)));
+                    }
+                    console.log(arrayItems);
+
+
+                    var x = " ";
+                    var s = " ";
+                    var totalPrice = 0;
+                    $('#main_data').html(" ");
+                    s += '<ul>';
+                    for (var i = 0; i < arrayItems.length; i++) {
+                        s += '<button class="delete_item_to_cart" data-itemId="' + arrayItems[i].id + '">Delete Item From Cart</button>';
+                        s += '<li><div><p>' + arrayItems[i].name + '</br>Total Price : ' + arrayItems[i].totalPrice + ' | Quantity : ' + arrayItems[i].quantity + '</p></div>';
+                        s += '</li>'
+                        totalPrice += parseInt(arrayItems[i].totalPrice);
+                    }
+
+                    s += '</ul>';
+                    $('#main_data').append(s);
+
+                    $('#popup_footer').html(" ");
+                    x += 'Total Price = ' + totalPrice;
+                    $('#popup_footer').append(x);
+                });
+
+            });
+
+        });
+        
+        });
+    </script>
+}
+
+
+

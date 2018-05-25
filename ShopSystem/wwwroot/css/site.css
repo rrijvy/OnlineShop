@@ -1,0 +1,291 @@
+﻿body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Comic Sans MS;
+}
+
+
+.clear {
+    clear: both;
+}
+
+#header {
+    border: 1px solid;
+    width: 100%;
+    height: 65px;
+    background: #333333;
+}
+
+    #header .brand {
+        float: left;
+        height: 100%;
+        padding: 0px 20px;
+        border: .1px solid #666666;
+        font-variant: small-caps;
+    }
+
+    #header .contact_us {
+        float: right;
+        height: 100%;
+        padding: 0px 20px;
+        border: .1px solid #666666;
+        font-variant: small-caps;
+    }
+
+    #header a {
+        text-decoration: none;
+        color: antiquewhite;
+    }
+
+    #header .searchBox {
+        float: left;
+        margin-left: 40px;
+        padding: 11px 0px 0px 0px;
+        height: 54px;
+    }
+
+.searchBox .textBox {
+    font-size: 18px;
+    padding: 7px;
+    width: 400px;
+}
+
+.searchBox .searchBtn {
+    font-size: 18px;
+    padding: 5px;
+    font-variant: small-caps
+}
+
+#header .viewCart {
+    float: left;
+    margin-left: 60px;
+    padding: 11px 0px 0px 0px;
+    height: 54px;
+}
+
+#header .viewCartBtn {
+    font-size: 18px;
+    font-variant: small-caps;
+    padding: 5px;
+}
+
+#navigation {
+    margin: auto;
+    padding: 0px;
+    width: 80%;
+    height: 150px;
+}
+
+#logo {
+    margin: 15px 0px 0px 80px;
+    float: left;
+    font-family: Faster One;
+}
+
+    #logo .textLogo {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #logo .textLogo2 {
+        font-size: 50px;
+        text-align: center;
+    }
+
+#navList {
+    margin-left: 150px;
+    width: 60%;
+    height: 100%;
+    float: left;
+}
+
+    #navList ul li {
+        margin: 20px 20px;
+        list-style: none;
+        float: left;
+    }
+
+        #navList ul li a {
+            display: block;
+            text-decoration: none;
+            font-family: Times New Roman;
+            font-size: 22px;
+            font-variant: small-caps;
+            padding: 0px 40px;
+        }
+
+#content {
+    width: 100%;
+    height: 400px;
+    background-color: red;
+    border: 1px solid;
+}
+
+#sideNavBar {
+    width: 18%;
+    height: auto;
+    float: left;
+}
+
+#sideNav .sideNavList {
+    margin: 0px;
+}
+
+    #sideNav .sideNavList button {
+        margin: 0px;
+        width: 100%;
+        border: 1px solid;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px 0px 10px 20px;
+        background: #4d0026;
+        color: antiquewhite;
+        font-family: Bubblegum Sans;
+    }
+
+#CategoryProducts {
+    float: right;
+    border: 1px solid;
+    background-color: yellow;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+    flex: 18%;
+    background-color: #f1f1f1;
+}
+
+    .side button {
+        margin: 0px;
+        width: 100%;
+        border: 1px solid;
+        text-decoration: none;
+        font-size: 20px;
+        padding: 10px 0px 10px 20px;
+        background: #4d0026;
+        color: antiquewhite;
+        font-family: Bubblegum Sans;
+    }
+
+/* Main column */
+.main {
+    flex: 82%;
+}
+
+#categoryProducts {
+    flex: 100%;
+    background-color: yellow;
+}
+
+#flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    #flex-container > div {
+        border: 1px solid;
+        width: 200px;
+        height: 250px;
+        margin: 10px;
+        text-align: center;
+        font-size: 14px;
+    }
+
+/* Pop Up */
+#popup_bg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0,0,0,0.7);
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#popup_main_div {
+    position: fixed;
+    width: 1100px;
+    height: 650px;
+    border-radius: 5px;
+    background-color: #662200;
+    top: 150px;
+    left: 350px;
+}
+
+#popup_close_div {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 25px;
+    border: 1px solid;
+    text-align: center;
+    cursor: pointer;
+    right: 5px;
+    top: 5px;
+    color: white;
+}
+
+#main_data {
+    margin-left: 55px;
+    margin-top: 20px;
+}
+
+    #main_data ul li {
+        background-color: #4d1a00;
+        margin-top: 3px;
+        list-style-type: none;
+        border: 1px solid;
+        width: 90%;
+    }
+
+        #main_data ul li p {
+            font-size: 15px;
+            color: whitesmoke;
+        }
+
+.delete_item_to_cart {
+    position: relative;
+    color: antiquewhite;
+    float: right;
+    top: 8px;
+    font-family: 'East Sea Dokdo';
+    font-variant: small-caps;
+    font-size: 24px;
+    right: 120px;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    border: 1px solid dotted antiquewhite;
+    border-radius: 17px;
+}
+
+#popup_footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 45px;
+    font-size: 20px;
+    width: 100%;
+    background-color: #4d1a00;
+    color: white;
+    text-align: center;
+}

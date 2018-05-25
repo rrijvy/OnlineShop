@@ -1,0 +1,12 @@
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\bin\Debug\netcoreapp2.0\ShopSystem.deps.json
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\bin\Debug\netcoreapp2.0\ShopSystem.runtimeconfig.json
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\bin\Debug\netcoreapp2.0\ShopSystem.runtimeconfig.dev.json
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\bin\Debug\netcoreapp2.0\ShopSystem.dll
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\bin\Debug\netcoreapp2.0\ShopSystem.pdb
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\obj\Debug\netcoreapp2.0\ShopSystem.csproj.CoreCompileInputs.cache
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\obj\Debug\netcoreapp2.0\ShopSystem.AssemblyInfoInputs.cache
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\obj\Debug\netcoreapp2.0\ShopSystem.AssemblyInfo.cs
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\obj\Debug\netcoreapp2.0\ShopSystem.dll
+c:\users\rrijv\source\repos\ShopSystem\ShopSystem\obj\Debug\netcoreapp2.0\ShopSystem.pdb
+C:\Users\rrijv\source\repos\ShopSystem\ShopSystem\obj\Debug\netcoreapp2.0\ShopSystem.csprojAssemblyReference.cache
